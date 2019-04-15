@@ -1,13 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { CarritoService } from '../servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-item-galeria',
   templateUrl: './item-galeria.component.html',
   styleUrls: ['./item-galeria.component.css']
 })
-export class ItemGaleriaComponent implements OnInit {
+export class ItemGaleriaComponent implements OnInit, OnDestroy {
 
   title = 'Licoreria';
+
+  @Input()
+  titulo;  
 
   @Input()
   textoBoton;   
@@ -21,16 +25,40 @@ export class ItemGaleriaComponent implements OnInit {
   @Output()
   cambioCerveza: EventEmitter<boolean> = new EventEmitter()
 
-  @Output()
-  cambioColor: EventEmitter<boolean> = new EventEmitter()
 
   url = "http://www.dna-autoparts.com/23121-thickbox_default/bielas-forjadas-eagle-para-sr20det.jpg";
 
-  notas = [1,2,3,4,5,6,7,8,9,10]
+  @Input()
+  notas;
 
-  constructor() { }
+  //Dependency
+  //Injection
+  //Injeccion de dependencias
+  //SERVICIOS -> COMPARTIDOS
+  //SERVICIOS -> SERVICIOS
+  constructor(private readonly _carritoService: CarritoService) { }
 
   ngOnInit() {
+    console.log('Empezo');
+    console.log(this._carritoService.carritoCompras);
+  }
+
+  ngOnDestroy(){
+    console.log('Termino');
+
+  }
+
+  agregarCarrito(valorCarrito){
+    //this._carritoService.carritoCompras.push(itemCarrito);
+    const itemCarrito = {
+      valor:valorCarrito,
+      nombreTienda: this.titulo
+    };
+    this._carritoService.carritoCompras
+                        .splice(0,0,itemCarrito);
+    console.log(this._carritoService.carritoCompras);
+
+
   }
 
   alertar(){
@@ -96,6 +124,46 @@ class Usuario{
 }
 */
 
+
+/*
+Ciclo de vida del componente
+ngOnInit -> OnInit -> Instancia
+Vivir
+ngOnDestroy -> OnDestroy
+Morir
+*/
+/*
+-RUTA  -> LOGIN/MODULOS/ETC
+  -PAPA []-> hijo  []-> hija
+    -HIJO []->nieto  ()->papa
+      -NIETO -> () ->hijo
+    -HIJA
+      -NIETA 
+  -TIO
+    -PRIMO
+*/
+/*
+
+# -> Modulo
+* -> Componente
+- -> Servicio
+
+# ModuloPrincipal (AppModule)
+  * ComponentePrincipal (AppComponent)
+
+..................................
+
+
+# ModuloNotas (NotasModule)
+  * TablaMostrarMateria
+    _ [] notasPorMateria
+    _ [] nombreBoton
+    _ [] iconoBoton
+    _ () ejecutoAccion
+
+  * listaMaterias
+    _ () seleccionoMateria
+*/
 
 
 
