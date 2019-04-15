@@ -21,6 +21,9 @@ export class ItemGaleriaComponent implements OnInit {
   @Output()
   cambioCerveza: EventEmitter<boolean> = new EventEmitter()
 
+  @Output()
+  cambioColor: EventEmitter<boolean> = new EventEmitter()
+
   url = "http://www.dna-autoparts.com/23121-thickbox_default/bielas-forjadas-eagle-para-sr20det.jpg";
 
   notas = [1,2,3,4,5,6,7,8,9,10]
@@ -44,6 +47,7 @@ export class ItemGaleriaComponent implements OnInit {
     if(this.url === cervezas){
       this.url = chelas;
       this.cambioChela.emit(true);
+      
     }else{
       this.url = cervezas;
       this.cambioCerveza.emit(true);
@@ -53,6 +57,20 @@ export class ItemGaleriaComponent implements OnInit {
     // this.url = url1;
   }
 
+  cambiarColor(){
+    const cervezas = "https://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    const chelas = "http://www.dna-autoparts.com/23121-thickbox_default/bielas-forjadas-eagle-para-sr20det.jpg"
+    if(this.url === cervezas){
+      this.url = chelas;
+      this.cambioChela.emit(true);
+    }else{
+      this.url = cervezas;
+      this.cambioCerveza.emit(true);
+    }
+    // var url2 = "http://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpghttp://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    // let url3 = "http://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpghttp://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    // this.url = url1;
+  }
 
 }
 
