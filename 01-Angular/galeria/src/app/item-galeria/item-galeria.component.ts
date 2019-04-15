@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-galeria',
@@ -10,10 +10,20 @@ export class ItemGaleriaComponent implements OnInit {
   title = 'Licoreria';
 
   @Input()
-  textoBoton;
+  textoBoton;   
 
   @Input()
   nombreItem;
+
+  @Output()
+  cambioChela: EventEmitter<boolean> = new EventEmitter()
+
+  @Output()
+  cambioCerveza: EventEmitter<boolean> = new EventEmitter()
+
+  url = "http://www.dna-autoparts.com/23121-thickbox_default/bielas-forjadas-eagle-para-sr20det.jpg";
+
+  notas = [1,2,3,4,5,6,7,8,9,10]
 
   constructor() { }
 
@@ -21,29 +31,58 @@ export class ItemGaleriaComponent implements OnInit {
   }
 
   alertar(){
-    alert('Auxilio me desmayo ' + this.nombreItem);
+    alert('Auxilio me desmayo: ' + this.nombreItem);
   }
 
-}
-/*
+  alertarBlur(){
+    alert('Alertar blur');
+  }
 
-@Decorators()  //FUBCION QUE SE EJECUTA ANTES 
+  cambiarImagen(){
+    const cervezas = "https://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    const chelas = "http://www.dna-autoparts.com/23121-thickbox_default/bielas-forjadas-eagle-para-sr20det.jpg"
+    if(this.url === cervezas){
+      this.url = chelas;
+      this.cambioChela.emit(true);
+    }else{
+      this.url = cervezas;
+      this.cambioCerveza.emit(true);
+    }
+    // var url2 = "http://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpghttp://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    // let url3 = "http://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpghttp://img.chilango.com/2016/01/cervezas-cervezas-cervezas.jpg"
+    // this.url = url1;
+  }
+
+
+}
+
+/*
+@DecoratorsClase() 
 class Usuario{
   @DecoratorsVariable()
-  private  nombre = 'Andres';
-
+  private nombre = 'Adrian';
   constructor(@DecoratorsConstructor() nombre){
 
   }
+
   @DecoratorsMetodo()
-  metodoPublico(){
+ metodoPublico(){
 
-  }
-  private netodoPrivado(){
+ }
+ private metodoPrivado(){
 
-  }
-  protected metodoProtected(){
+ }
+ protected metodoProtected(){
 
-  }
+ }
 }
 */
+
+
+
+
+
+
+
+
+
