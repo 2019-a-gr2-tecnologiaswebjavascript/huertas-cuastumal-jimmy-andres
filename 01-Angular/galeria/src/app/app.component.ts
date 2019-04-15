@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarritoService } from './servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Floreria';
-  color = "rojo"
+  color = "rojo";
+  estaMostrando = false;
+
 
   arregloFlores = [
     new Flor("Papitas","A lo bestia"),
@@ -17,8 +20,13 @@ export class AppComponent {
 
   arregloFloresJs = [
     {
+      titulo: "Don Jose",
       nombre:"Papitas",
       descripcion:"A lo bestia",
+      notas:[
+        'Hot Dog',
+        'Hamburguesas'
+      ]
       // dato:1,
       // dato1:1.1,
       // dato3:" asdasd ",
@@ -27,14 +35,28 @@ export class AppComponent {
       // dato6:null
     },
     {
+      titulo: "Don Pepito",
       nombre:"Carnitas",
-      descripcion:"Gorditas"
+      descripcion:"Gorditas",
+      notas:[
+        'Papitas',
+        'Empanadas'
+      ]
     },
     {
+      titulo: "Doña Maria",
       nombre:"Chicas",
-      descripcion:"Cheveres"
+      descripcion:"Cheveres",
+      notas:[
+        'Motes',
+        'Fritadas'
+      ]
     }
   ]
+
+  constructor(private readonly _carritoService:CarritoService){
+
+  }
 
 
   cambioChela(evento:boolean){
@@ -50,6 +72,11 @@ export class AppComponent {
     console.log('Llego a cerveza: ', evento);
     const amarillo = "amarillo";
     this.color = amarillo;
+
+  }
+
+  mostrar(estaMostrando){
+    this.estaMostrando= estaMostrando;
 
   }
 
