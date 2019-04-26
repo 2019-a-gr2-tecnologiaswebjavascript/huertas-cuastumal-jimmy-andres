@@ -8,9 +8,8 @@ import { CarritoService } from './servicios/carrito/carrito.service';
 })
 export class AppComponent {
   title = 'Floreria';
-  color = "rojo";
+  claseTitulo = 'rojo';
   estaMostrando = false;
-
 
   arregloFlores = [
     new Flor("Papitas","A lo bestia"),
@@ -21,11 +20,12 @@ export class AppComponent {
   arregloFloresJs = [
     {
       titulo: "Don Jose",
-      nombre:"Papitas",
+      nombre: "Papitas",
       descripcion:"A lo bestia",
       notas:[
-        'Hot Dog',
-        'Hamburguesas'
+        'Hot Dog', 
+        'Hamburguesas',
+        'Papitas',
       ]
       // dato:1,
       // dato1:1.1,
@@ -40,7 +40,7 @@ export class AppComponent {
       descripcion:"Gorditas",
       notas:[
         'Papitas',
-        'Empanadas'
+        'Empanadas',
       ]
     },
     {
@@ -49,35 +49,30 @@ export class AppComponent {
       descripcion:"Cheveres",
       notas:[
         'Motes',
-        'Fritadas'
+        'Fritada',
+        'Papitas',
       ]
     }
   ]
 
   constructor(private readonly _carritoService:CarritoService){
-
+    
   }
-
 
   cambioChela(evento:boolean){
     // logica hacerle verde
     console.log('Llego a chela: ', evento);
-    const verde = "verde";
-    this.color = verde
-
+    this.claseTitulo = 'verde';
   }
 
   cambioCerveza(evento:boolean){
     // logica hacerle amarillo
     console.log('Llego a cerveza: ', evento);
-    const amarillo = "amarillo";
-    this.color = amarillo;
-
+    this.claseTitulo = 'amarillo';
   }
 
   mostrar(estaMostrando){
-    this.estaMostrando= estaMostrando;
-
+    this.estaMostrando = estaMostrando;
   }
 
 
