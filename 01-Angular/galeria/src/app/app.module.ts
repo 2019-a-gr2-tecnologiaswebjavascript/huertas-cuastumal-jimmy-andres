@@ -7,18 +7,19 @@ import { CarritoService } from './servicios/carrito/carrito.service';
 import { MostrarCarritoComponent } from './mostrar-carrito/mostrar-carrito.component';
 
 @NgModule({
-  declarations: [ //Componentes
+  declarations: [  // Componentes
     AppComponent,
     ItemGaleriaComponent,
     MostrarCarritoComponent
   ],
-  imports: [ //Modulos
-    BrowserModule  //Hace que funcionen las Directivas
+  imports: [  // Otros Modulos
+    BrowserModule  // Directiva
   ],
-  providers: [ //Servicios
+  providers: [  // Servicios
     CarritoService
-
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<h1 [class]="color">Titulo {{title}}</h1>
+<h1 [class]="claseTitulo">Titulo {{title}}</h1>
 <!-- {{interpolacion}}  -->
 
 <pre>
@@ -10,7 +10,6 @@
 <button (click)="mostrar(false)">Ocultar</button>
 
 <div *ngIf="estaMostrando">
-
     <app-item-galeria 
     *ngFor="let flor of arregloFloresJs"
     [titulo]="flor.titulo"
@@ -21,10 +20,4 @@
     (cambioCerveza)="cambioCerveza($event)"
     >
     </app-item-galeria>
-
-    
 </div>
-
-
-
-

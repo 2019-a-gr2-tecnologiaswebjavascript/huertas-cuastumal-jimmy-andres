@@ -8,9 +8,9 @@ import { CarritoService } from '../servicios/carrito/carrito.service';
 })
 export class MostrarCarritoComponent implements OnInit {
 
-  constructor(private readonly _carritoService:CarritoService) { }
+  constructor(private readonly _carritoService: CarritoService) { }
 
   ngOnInit() {
-  }
+  } 
 
 }
