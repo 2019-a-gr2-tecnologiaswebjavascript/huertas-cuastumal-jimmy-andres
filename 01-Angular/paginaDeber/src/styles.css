@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.item-menu{
+    padding:0px;
+}
+.imagen-menu{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+.imagen-menu:hover{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background-color: aquamarine;
+    border-radius: 70%;
+}
+.usuario-menu{
+    background-color: gray;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+.busqueda{
+    height: 40px;
+    width: inherit;
+    background-color: lightgray;
+    border: 0;
+    outline: none;
+}
+.busqueda:focus{
+    height: 40px;
+    width: inherit;
+    background-color: white;
+    border: 0;
+    outline: none;
+    
+}
+.columna-busqueda{
+    height: 50px; 
+    border-style:solid;
+    border-width: 1px;
+    background-color: lightgray;
+}
+.alineado{
+    display: inline-block;
+}
