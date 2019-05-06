@@ -1,0 +1,14 @@
+.card-img{
+    height: 90px;
+    width: auto;
+    align-self: center;
+}
+.espacio-boton{
+    margin-top: 30px;
+}
+.card{
+    background-color: gray
+}
+.card:hover{
+    background-color: rgb(83, 109, 100);
+}
