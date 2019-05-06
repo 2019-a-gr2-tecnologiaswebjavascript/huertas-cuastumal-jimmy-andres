@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
 
 }
 .item-menu{
@@ -51,4 +52,9 @@ body{
 }
 .alineado{
     display: inline-block;
+}
+.contenedor{
+    margin: 30px;
+    margin-right: 10px;
+    border:auto;
 }

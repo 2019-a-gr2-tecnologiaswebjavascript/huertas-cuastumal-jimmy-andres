@@ -21,4 +21,49 @@ export class AppComponent {
       progreso: "15"
     }
   ]
+
+  cursos =[
+    {
+      titulo:"Angular: De cero a experto",
+      urlImage:"https://i.udemycdn.com/course/240x135/1075334_8b5f_4.jpg",
+      profesor:"Fernando Herrera"
+    },
+    {
+      titulo:"Desarrollo Web completp con HTML5, CSS#, JS",
+      urlImage:"https://i.udemycdn.com/course/240x135/980450_7fc0_3.jpg",
+      profesor:"Juan Pablo de la Torre Valdez"
+    },
+    {
+      titulo:"Programacion de Android desde Cero",
+      urlImage:"https://i.udemycdn.com/course/240x135/957106_270f_6.jpg",
+      profesor:"Jose Javier Villena"
+    },
+    {
+      titulo:"Excel completo desde principiante",
+      urlImage:"https://i.udemycdn.com/course/240x135/1341936_2776.jpg",
+      profesor:"Miguel Maraby"
+    },
+  ]
+  cursosBreves =[
+    {
+      titulo:"Dart-Begginers Course",
+      urlImage:"https://i.udemycdn.com/course/240x135/1548958_ad47_4.jpg",
+      profesor:"Fernando Bryan Cairms"
+    },
+    {
+      titulo:"Swift vs Objective-C",
+      urlImage:"https://i.udemycdn.com/course/240x135/646618_d0d8_4.jpg",
+      profesor:"Daniel Rogers"
+    },
+    {
+      titulo:"Curso de diseño de  apliaciones",
+      urlImage:"https://i.udemycdn.com/course/240x135/646618_d0d8_4.jpg",
+      profesor:"Mer Ballesteros"
+    },
+    {
+      titulo:"Curso room Android",
+      urlImage:"https://i.udemycdn.com/course/240x135/1652532_af3a.jpg",
+      profesor:"Alberto Palomar"
+    },
+  ]
 }

@@ -1,5 +1,5 @@
 <div class="container" >
-  <div class="row align-items-center">
+  <div class="row align-items-center" style="margin-top:15px;">
     <div class="col-md-1 item-menu">
         UDEMY 
     </div>
@@ -41,11 +41,11 @@
   </div>
   <br>
   <h2>Bienvenido de nuevo, {{usuario}}</h2>
-  <h5>¿Preparado para volver a involucrarte?    </h5>
+  <h5>¿Preparado para volver a involucrarte?    </h5><br>
   <br>
 
-  <div class="row alineado" *ngFor="let curso of misCursos">
-    <div class="col">
+  <div class="row" >
+    <div class="col-md-6" *ngFor="let curso of misCursos">
       <app-my-courses
       [titulo]="curso.titulo"
       [urlImage]="curso.urlImage"
@@ -56,7 +56,32 @@
   </div>
 
   <br>
-  <h5>Los mejores cursos</h5>
-  <app-curso></app-curso>
+  <h5>Los mejores cursos</h5> <br>
+
+  <div class="row" >
+    <div class="col-md-3" *ngFor="let curso of cursos">
+      <app-curso
+      [titulo]="curso.titulo"
+      [urlImage]="curso.urlImage"
+      [profesor]="curso.profesor">
+      
+      </app-curso>
+    </div>
+  </div>
+
+  <br>
+  <h5>Cursos breves para ti</h5>
+  <br>
+
+  <div class="row" >
+    <div class="col-md-3" *ngFor="let curso of cursosBreves">
+      <app-curso
+      [titulo]="curso.titulo"
+      [urlImage]="curso.urlImage"
+      [profesor]="curso.descripcion">
+      
+      </app-curso>
+    </div>
+  </div>
   
 </div>
