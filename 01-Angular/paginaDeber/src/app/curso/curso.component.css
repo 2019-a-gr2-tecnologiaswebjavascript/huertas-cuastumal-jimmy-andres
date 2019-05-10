@@ -3,3 +3,7 @@
     width: auto;
     align-self: center;
 }
+.card:hover{
+    background-color:rgb(148, 157, 167);
+    cursor: pointer;
+}
