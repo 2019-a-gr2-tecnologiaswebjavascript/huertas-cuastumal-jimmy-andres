@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "paginaDeber": {
+    "formularios": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/paginaDeber",
+            "outputPath": "dist/formularios",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,13 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/bootstrap/css/bootstrap-grid.min.css",
-              "src/assets/bootstrap/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/bootstrap/js/bootstrap.js"
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -62,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "paginaDeber:build"
+            "browserTarget": "formularios:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "paginaDeber:build:production"
+              "browserTarget": "formularios:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "paginaDeber:build"
+            "browserTarget": "formularios:build"
           }
         },
         "test": {
@@ -107,7 +103,7 @@
         }
       }
     },
-    "paginaDeber-e2e": {
+    "formularios-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "paginaDeber:serve"
+            "devServerTarget": "formularios:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "paginaDeber:serve:production"
+              "devServerTarget": "formularios:serve:production"
             }
           }
         },
@@ -136,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "paginaDeber"
+  "defaultProject": "formularios"
 }

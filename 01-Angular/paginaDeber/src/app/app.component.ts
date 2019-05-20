@@ -66,4 +66,10 @@ export class AppComponent {
       profesor:"Alberto Palomar"
     },
   ]
+
+  curso1 = {
+    titulo:"IOS",
+      urlImage:"https://i.udemycdn.com/course/240x135/1652532_af3a.jpg",
+      profesor:"Alberto Palomar"
+  }
 }
