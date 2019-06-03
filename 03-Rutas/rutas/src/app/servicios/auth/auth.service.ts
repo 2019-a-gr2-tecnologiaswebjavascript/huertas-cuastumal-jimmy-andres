@@ -8,7 +8,7 @@ export class AuthService {
   estaLogeado: boolean= false;
 
   constructor(private readonly _router:Router) { }
-
+  
   login(password: string, usuario:string){
     if(password == '1234'  && usuario=='adrian'){
       this.estaLogeado = true;

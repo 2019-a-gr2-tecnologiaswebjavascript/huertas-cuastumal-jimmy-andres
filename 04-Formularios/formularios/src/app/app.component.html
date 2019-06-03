@@ -12,9 +12,9 @@ Consulta: {{q}}
 <pre>Touched: {{formularioUsuario.touched}}</pre>
 <pre>Untouched: {{formularioUsuario.untouched}}</pre>
 <form
-    #formularioUsuario="ngForm"
-    novalidate
-    (submit)="guardarUsuario(formularioUsuario)"
+      #formularioUsuario="ngForm"
+      novalidate
+      (submit)="guardarUsuario(formularioUsuario)"
 >
   <label for="nombre">Nombre</label>
   <input id="nombre" 
