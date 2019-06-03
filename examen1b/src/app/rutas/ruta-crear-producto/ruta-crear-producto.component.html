@@ -53,6 +53,13 @@
             type="text"
             [(ngModel)]="anio">
 
+            <label for="valor">Valor</label>
+            <input id="valor" 
+            required
+            name="valor" 
+            type="number"
+            [(ngModel)]="valor">
+
                 
             <button type="submit" [disabled]="formularioProducto.invalid"> Crear</button>
         

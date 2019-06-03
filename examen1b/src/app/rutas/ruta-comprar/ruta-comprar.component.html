@@ -1,5 +1,116 @@
 <div class="container">
-  <p>
-    ruta-comprar works!
-  </p>
+  <div style="text-align: center;"><h1>COMPRAR</h1> <br></div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-4">
+            <form #formularioFactura="ngForm"
+              novalidate
+              (submit)="guardarFactura(formularioFactura)">
+                
+              <label for="nombre">Nombre</label>
+              <input id="nombre" 
+              required
+              min="5"
+              max="10"
+              name="nombreUsuarioCompra" 
+              type="text"
+              [(ngModel)]="nombre">
+              <br>
+              <label for="cedula">Cedula</label>
+              <input id="cedula" 
+              required
+              name="nombreUsuarioCompra" 
+              type="number"
+              [(ngModel)]="cedula">
+              <br>
+              <label for="telefono">Telefono</label>
+              <input id="telefono" 
+              required
+              name="telefono" 
+              type="number"
+              [(ngModel)]="telefono">
+              <br>
+              <label for="mail">Correo</label>
+              <input id="mail" 
+              required
+              name="mail" 
+              type="email"
+              [(ngModel)]="mail">
+              <br>
+              <label for="direccion" >Direccion</label>
+              <input id="direccion"
+              required
+              name="direccion" 
+              type="number"
+              [(ngModel)]="direccion">
+              <br>
+              <button type="submit"> Comprar </button>
+            </form>
+        </div>
+        <div class="col-sm-8" style="text-align: center">
+          <table class="table table-hover animated slideInLeft">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th> Accion</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of carrito">
+              <tr>
+                <td> {{item.modelo}}</td>
+                <td>{{item.cantidad}}</td>
+                <td>
+                  <a 
+                  class="quitar-link">
+                   <button (click)="quitarDelCarrito(item)"
+                           class="btn btn-outline-danger btn-block espaciado-boton">
+                       Quitar
+                   </button>
+               </a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3 >Productos</h3>
+      <h5>Cajero: {{nombreCajero}}</h5>
+      <h5>Total : </h5>
+        <table class="table table-hover animated slideInLeft">
+            <thead>
+            <tr>
+                <!-- th -> table header -->
+                <th width="20%">Marca</th>
+                <th width="20%">Modelo</th>
+                <th width="25%" style="text-align: center">Accion</th>
+    
+            </tr>
+            </thead>
+            <tbody *ngFor="let producto of productos">
+                  <tr>
+                      <!-- td -> table detail -->
+                      <td>{{producto.nombreMarca}}</td>
+                      <td>{{producto.modelo}}</td>
+                      <td>
+                          <a 
+                             class="quitar-link">
+                              <button (click)="agregarAlCarrito(producto)"
+                                      class="btn btn-outline-danger btn-block espaciado-boton">
+                                  Agregar
+                              </button>
+                          </a>
+                          
+                      </td>
+                  </tr>
+            
+            </tbody>
+        </table>
+    </div>
+  </div>
 </div>

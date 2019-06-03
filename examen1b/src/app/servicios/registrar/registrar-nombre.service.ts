@@ -16,5 +16,9 @@ export class RegistrarNombreService {
       return true;
    
   }
+
+  getNombre(){
+    return this.nombre;
+  }
    
 }

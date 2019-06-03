@@ -14,7 +14,8 @@ export class ProcductosService {
       nombreMarca: "toyota",
       color: "azul",
       modelo: "Hilux",
-      anio: "2019"
+      anio: "2019",
+      valor: 1000
     },
     {
       idChofer: "2",
@@ -22,14 +23,16 @@ export class ProcductosService {
       nombreMarca: "hyunday",
       color: "negro",
       modelo: "Accent",
-      anio: "2017"
+      anio: "2017",
+      valor: 2000
     },{
       idChofer: "3",
       chasis: "jytasd98r",
       nombreMarca: "nissan",
       color: "azul",
       modelo: "xtrail",
-      anio: "2008"
+      anio: "2008",
+      valor: 3000
     }
 
   ]
@@ -46,6 +49,7 @@ export class ProcductosService {
       color: formulario.controls.color.value,
       modelo: formulario.controls.modelo.value,
       anio: formulario.controls.anio.value,
+      valor: formulario.controls.valor.value
 
     }
 
