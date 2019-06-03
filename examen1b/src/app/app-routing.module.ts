@@ -6,6 +6,7 @@ import { RutaRevisarComprasComponent } from './rutas/ruta-revisar-compras/ruta-r
 import { RutaComprarComponent } from './rutas/ruta-comprar/ruta-comprar.component';
 import { RutaGruposProductosComponent } from './rutas/ruta-grupos-productos/ruta-grupos-productos.component';
 import { RutaCrearGrupoComponent } from './rutas/ruta-crear-grupo/ruta-crear-grupo.component';
+import { RutaCrearProductoComponent } from './rutas/ruta-crear-producto/ruta-crear-producto.component';
 
 const routes: Routes = [
   {
@@ -23,12 +24,18 @@ const routes: Routes = [
           {
             path:'productos/:idGrupo',
             component:RutaGruposProductosComponent,
+            children:[
+              {
+                path : 'crear',
+                component: RutaCrearProductoComponent,
+              }
+            ],
           },
           {
             path:'crearGrupo',
-            component: RutaCrearGrupoComponent
+            component: RutaCrearGrupoComponent,
           }
-        ],
+        ]
       },
       {
         path:'comprar',

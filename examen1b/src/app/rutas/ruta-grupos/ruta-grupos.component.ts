@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgregarGrupoService } from 'src/app/servicios/agregar-grupo/agregar-grupo.service';
+import { GruposService } from 'src/app/servicios/grupos/grupos.service';
 
 @Component({
   selector: 'app-ruta-grupos',
@@ -8,58 +9,33 @@ import { AgregarGrupoService } from 'src/app/servicios/agregar-grupo/agregar-gru
 })
 export class RutaGruposComponent implements OnInit {
   
-constructor(private readonly _agregarGrupo: AgregarGrupoService) { }
+constructor(private readonly _grupoService: GruposService) { }
 
-  grupos=[
-    {
-      id:"1",
-      nombre: "Andres Huertas",
-      fechaNacimiento: "29/01/1997",
-      numeroAutos: "2",
-      licenciaValida: "true"
-    },
-    {
-      id:"2",
-      nombre: "Adrian Eguez",
-      fechaNacimiento: "17/01/1997",
-      numeroAutos: "6",
-      licenciaValida: "true"
-    },
-    {
-      id:"3",
-      nombre: "Pepito Perez",
-      fechaNacimiento: "14/06/2001",
-      numeroAutos: "2",
-      licenciaValida: "true"
-    },
-    {
-      id:"4",
-      nombre: "Luchito Perez  ",
-      fechaNacimiento: "14/06/2001",
-      numeroAutos: "2",
-      licenciaValida: "true"
+  grupos=[];
+  
+  busqueda;
+
+  eliminarGrupo(idGrupo){
+    this._grupoService.eliminarGrupo(idGrupo)
+  }
+  
+  buscar(formulario ){
+    
+    let nombreABuscar = formulario.controls.busqueda.value;
+    if (nombreABuscar !=""){
+      console.log(nombreABuscar)
+    this.grupos = this._grupoService.buscarGrupo(nombreABuscar);
+    }else{
+      this.grupos =this._grupoService.listarGrupos();
     }
-  ];
-
-   
-  nuevoId= this.grupos.length + 1;
-  
-  rutaNuevoGrupo="crearGrupo?id="+this.nuevoId
-
-  agregarGrupo(grupo){
-    this.grupos.push(grupo);
-    this.nuevoId++;
-  
+    
   }
-  eliminar(idGrupo){
-    const index = this.grupos.indexOf(idGrupo)
-    this.grupos.splice(index,1)
-  }
-  
 
   
 
   ngOnInit() {
+    this.grupos = this._grupoService.listarGrupos()
+
   }
 
 }

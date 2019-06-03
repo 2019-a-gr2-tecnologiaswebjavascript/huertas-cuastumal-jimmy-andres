@@ -1,0 +1,60 @@
+<!--
+        <pre>ERROR:
+            {{vtNombre.errors | json}}
+        </pre>
+        <pre>Valido: {{vtNombre.valid}}</pre>
+        <pre>Invalido: {{vtNombre.invalid}}</pre>
+        <pre>Dirty: {{vtNombre.dirty}}</pre>
+        <pre>Prostine: {{vtNombre.pristine}}</pre>
+        <pre>Touched: {{vtNombre.touched}}</pre>
+        <pre>Untouched: {{vtNombre.untouched}}</pre>
+        -->
+
+        <div class="container" >
+          <form 
+            #formularioProducto="ngForm"
+            novalidate
+            (submit)="crearProducto(formularioProducto)"
+          >
+            <label for="chasis">Chasis</label>
+            <input id="chasis" 
+            required
+            name="chasis" 
+            type="text" 
+            [(ngModel)]="chasis"
+          
+            >
+            <label for="nombreMarca">Nombre Marca</label>
+            <input id="nombreMarca"
+            required
+            type="text"
+            name="nombreMarca"
+            [(ngModel)]="nombreMarca"
+           
+            >
+            <label for="color">Color</label>
+            <input id="color"
+            required
+            type="text"
+            name="color"
+            [(ngModel)]="color"
+            >
+            <label for="modelo">Modelo</label>
+            <input id="modelo" 
+            required
+            name="modelo" 
+            type="text" 
+            [(ngModel)]="modelo">
+
+            <label for="anio">Anio</label>
+            <input id="anio" 
+            required
+            name="anio" 
+            type="text"
+            [(ngModel)]="anio">
+
+                
+            <button type="submit" [disabled]="formularioProducto.invalid"> Crear</button>
+        
+          </form>
+        </div>

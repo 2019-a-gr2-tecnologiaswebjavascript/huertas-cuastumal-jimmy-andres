@@ -10,6 +10,7 @@ import { RutaRevisarComprasComponent } from './rutas/ruta-revisar-compras/ruta-r
 import { RutaGruposProductosComponent } from './rutas/ruta-grupos-productos/ruta-grupos-productos.component';
 import { RutaCrearGrupoComponent } from './rutas/ruta-crear-grupo/ruta-crear-grupo.component';
 import { AgregarGrupoService } from './servicios/agregar-grupo/agregar-grupo.service';
+import { RutaCrearProductoComponent } from './rutas/ruta-crear-producto/ruta-crear-producto.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AgregarGrupoService } from './servicios/agregar-grupo/agregar-grupo.ser
     RutaRevisarComprasComponent,
     RutaGruposProductosComponent,
     RutaCrearGrupoComponent,
+    RutaCrearProductoComponent,
   ],
   imports: [
     BrowserModule,

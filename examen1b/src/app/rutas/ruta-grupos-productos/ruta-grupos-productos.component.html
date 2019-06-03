@@ -27,12 +27,14 @@
 
                 </button>
                 <br>
+            <a routerLink ="crear">
                 <button
                         class="btn btn-outline-success btn-block ">
 
                     Crear
 
                 </button>
+            </a>
 
             </div>
         </div>
@@ -62,7 +64,7 @@
                   <td>
                       <a 
                          class="quitar-link">
-                          <button
+                          <button (click)="eliminarProducto(producto)"
                                   class="btn btn-outline-danger btn-block espaciado-boton">
                               Eliminar
                           </button>
@@ -79,3 +81,4 @@
 
 
 </div>
+<router-outlet></router-outlet>
