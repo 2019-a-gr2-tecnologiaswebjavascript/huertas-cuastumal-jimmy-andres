@@ -1,0 +1,127 @@
+<div class="container">
+  <div style="text-align: center;"><h1>COMPRAR</h1> <br> </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-4">
+            <form #formularioCabecera="ngForm"
+              novalidate
+              (submit)="guardarFactura(formularioCabecera)">
+                
+              <label for="nombre">Nombre</label>
+              <input id="nombre" 
+              required
+              min="5"
+              max="10"
+              name="nombreUsuarioCompra" 
+              type="text" 
+              pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
+              [(ngModel)]="nombre">
+              <br>
+              <label for="cedula">Cedula</label>
+              <input id="cedula" 
+              rrequired
+              minlength="10"
+              maxlength="10"
+              pattern="([0-9]{10})"
+              name="cedula" 
+              type="text" 
+              [(ngModel)]="cedula"
+              #vtCedula="ngModel">
+              <br>
+              <label for="telefono">Telefono</label>
+              <input id="telefono" 
+              required
+              name="telefono" 
+              pattern="([0-9]+)"
+              min="7"
+              max="13"
+              type="text"
+              [(ngModel)]="telefono">
+              <br>
+              <label for="mail">Correo</label>
+              <input id="mail" 
+              required
+              name="mail" 
+              type="email"
+              pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$"
+              [(ngModel)]="mail">
+              <br>
+              <label for="direccion" >Direccion</label>
+              <input id="direccion"
+              required
+              name="direccion"
+              max="50" 
+              type="text"
+              [(ngModel)]="direccion">
+              <br>
+              <button type="submit"> Comprar </button>
+              <button (click)=salir()> Salir</button>
+            </form>
+        </div>
+        <div class="col-sm-8" style="text-align: center">
+          <table class="table table-hover animated slideInLeft">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of carrito">
+              <tr>
+                <td> {{item.modelo}}</td>
+                <td>{{item.cantidad}}</td>
+                <td>
+                  <a 
+                  class="quitar-link">
+                   <button (click)="quitarDelCarrito(item)"
+                           class="btn btn-outline-danger espaciado-boton redondo">
+                       <h2>-</h2>
+                   </button>
+               </a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3 >Productos</h3>
+      <h5>Cajero: {{nombreCajero}}</h5>
+      <h5>Total : {{valor}}</h5>
+        <table class="table table-hover animated slideInLeft">
+            <thead>
+            <tr>
+                <!-- th -> table header -->
+                <th width="20%">Marca</th>
+                <th width="20%">Modelo</th>
+                <th width="25%" style="text-align: center"></th>
+    
+            </tr>
+            </thead>
+            <tbody *ngFor="let producto of productos">
+                  <tr>
+                      <!-- td -> table detail -->
+                      <td>{{producto.nombreMarca}}</td>
+                      <td>{{producto.modelo}}</td>
+                      <td style="text-align: center;">
+                          <a 
+                             class="quitar-link" >
+                              <button (click)="agregarAlCarrito(producto)"
+                                      class="btn btn-outline-success espaciado-boton redondo">
+                                  <h3>+</h3>
+                              </button>
+                          </a>
+                          
+                      </td>
+                  </tr>
+            
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

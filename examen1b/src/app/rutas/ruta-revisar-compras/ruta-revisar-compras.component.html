@@ -1,0 +1,62 @@
+<div class ="container">        
+  <h1>FACTURAS DE COMPRAS</h1>
+    <br>
+    <br>
+    <form 
+        #formularioBusqueda="ngForm"
+        novalidate
+        (submit)="buscar(formularioBusqueda)">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group row">
+                    <label for="busqueda">Busqueda</label>
+
+                    <input id="busqueda"
+                        type="text"
+                        name="busqueda"
+                        [(ngModel)]="busqueda"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                
+                <button type="submit"                       
+                        class="btn btn-outline-primary btn-block ">
+
+                    Buscar
+
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+<table class="table table-hover animated slideInLeft">
+    <thead>
+    <tr>
+        <!-- th -> table header -->
+        <th width="25%" style="text-align: center">Cedula</th>
+        <th width="20%">Nombre</th>
+        <th width="20%">Vendedor</th>
+        <th width="25%">Valor</th>
+        
+
+    </tr>
+    </thead>
+    <tbody *ngFor="let factura of facturas">
+          <tr>
+              <!-- td -> table detail -->
+              <td>{{factura.cedula}}</td>
+              <td>{{factura.nombre}}</td>
+              <td>{{factura.vendedor}}</td>
+              <td>{{factura.valor}}</td>
+          </tr>
+    
+    </tbody>
+
+
+</table>
+
+
+
+</div>

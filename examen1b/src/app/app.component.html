@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container" >
+  <form 
+    #formularioNombre="ngForm"
+    novalidate
+    (submit)="registrarNombre(formularioNombre)"
+  >
+    <div>
+      <label for="nombre">Nombre</label>
+      <div>
+      <input id="nombre" 
+      required
+      min="5"
+      max="15"
+      name="nombreUsuario" 
+      type="text" 
+      pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
+      [(ngModel)]="nombre"
+      #vtNombre="ngModel"
+      >
+      <!--
+      <pre>ERROR:
+          {{vtNombre.errors | json}}
+      </pre>
+      <pre>Valido: {{vtNombre.valid}}</pre>
+      <pre>Invalido: {{vtNombre.invalid}}</pre>
+      <pre>Dirty: {{vtNombre.dirty}}</pre>
+      <pre>Prostine: {{vtNombre.pristine}}</pre>
+      <pre>Touched: {{vtNombre.touched}}</pre>
+      <pre>Untouched: {{vtNombre.untouched}}</pre>
+    -->
+      </div>
+    </div>
+    <button type="submit" [disabled]="formularioNombre.invalid"> Registrar</button>
+  </form>
+</div>
+  <router-outlet></router-outlet>
+

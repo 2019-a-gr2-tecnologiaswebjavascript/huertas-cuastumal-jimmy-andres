@@ -1,0 +1,58 @@
+<!--
+        <pre>ERROR:
+            {{vtNombre.errors | json}}
+        </pre>
+        <pre>Valido: {{vtNombre.valid}}</pre>
+        <pre>Invalido: {{vtNombre.invalid}}</pre>
+        <pre>Dirty: {{vtNombre.dirty}}</pre>
+        <pre>Prostine: {{vtNombre.pristine}}</pre>
+        <pre>Touched: {{vtNombre.touched}}</pre>
+        <pre>Untouched: {{vtNombre.untouched}}</pre>
+        -->
+
+<div class="container" >
+  <form 
+    #formularioGrupo="ngForm"
+    novalidate
+    (submit)="crearGrupo(formularioGrupo)"
+  >
+    <label for="nombre">Nombre</label>
+    <input id="nombre" 
+    required
+    min="5"
+    max="10"
+    name="nombreUsuario" 
+    type="text" 
+    pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
+    [(ngModel)]="nombre"
+  
+    >
+    <label for="fechaNac">Fecha de nacimiento</label>
+    <input id="fechaNac"
+    required
+    type="date"
+    name="fechaNac"
+    [(ngModel)]="fecha"
+   
+    >
+    <label for="numAutos">Numero de autos</label>
+    <input id="numAutos"
+    required
+    type="number"
+    name="numeroAutos"
+    max="2"
+    [(ngModel)]="numAutos"
+    >
+    <label for="licenciaValida">Licencia Valida</label>
+    <select name="licenciaValida"
+    required
+    [(ngModel)]="valido"
+    >
+        <option value="true">SI</option>
+        <option value="false">NO</option>
+    </select>
+        
+    <button type="submit" [disabled]="formularioGrupo.invalid"> Crear</button>
+
+  </form>
+</div>
