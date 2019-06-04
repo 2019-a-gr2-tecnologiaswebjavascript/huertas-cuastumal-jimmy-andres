@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgregarGrupoService } from 'src/app/servicios/agregar-grupo/agregar-grupo.service';
 import { GruposService } from 'src/app/servicios/grupos/grupos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ruta-grupos',
@@ -9,7 +10,8 @@ import { GruposService } from 'src/app/servicios/grupos/grupos.service';
 })
 export class RutaGruposComponent implements OnInit {
   
-constructor(private readonly _grupoService: GruposService) { }
+constructor(private readonly _grupoService: GruposService,
+            private readonly _router:Router) { }
 
   grupos=[];
   
@@ -30,8 +32,6 @@ constructor(private readonly _grupoService: GruposService) { }
     }
     
   }
-
-  
 
   ngOnInit() {
     this.grupos = this._grupoService.listarGrupos()

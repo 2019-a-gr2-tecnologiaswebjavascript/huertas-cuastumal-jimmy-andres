@@ -16,7 +16,7 @@
             novalidate
             (submit)="crearProducto(formularioProducto)"
           >
-            <label for="chasis">Chasis</label>
+            <label class="espacio-izquierdo" for="chasis"> Chasis</label>
             <input id="chasis" 
             required
             name="chasis" 
@@ -24,36 +24,38 @@
             [(ngModel)]="chasis"
           
             >
-            <label for="nombreMarca">Nombre Marca</label>
+            <label class="espacio-izquierdo" for="nombreMarca"> Nombre Marca</label>
             <input id="nombreMarca"
             required
             type="text"
             name="nombreMarca"
+            min="3"
+            max="10"
             [(ngModel)]="nombreMarca"
            
             >
-            <label for="color">Color</label>
+            <label class="espacio-izquierdo" for="color"> Color</label>
             <input id="color"
             required
             type="text"
             name="color"
             [(ngModel)]="color"
-            >
-            <label for="modelo">Modelo</label>
+            ><br>
+            <label class="espacio-izquierdo" for="modelo"> Modelo</label>
             <input id="modelo" 
             required
             name="modelo" 
             type="text" 
             [(ngModel)]="modelo">
 
-            <label for="anio">Anio</label>
+            <label  class="espacio-izquierdo"for="anio"> Anio</label>
             <input id="anio" 
             required
             name="anio" 
             type="text"
             [(ngModel)]="anio">
 
-            <label for="valor">Valor</label>
+            <label  class="espacio-izquierdo"for="valor"> Valor</label>
             <input id="valor" 
             required
             name="valor" 
@@ -61,7 +63,7 @@
             [(ngModel)]="valor">
 
                 
-            <button type="submit" [disabled]="formularioProducto.invalid"> Crear</button>
+            <button  type="submit" [disabled]="formularioProducto.invalid"> Crear</button>
         
           </form>
         </div>

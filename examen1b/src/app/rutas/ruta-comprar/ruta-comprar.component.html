@@ -33,7 +33,10 @@
               <input id="telefono" 
               required
               name="telefono" 
-              type="number"
+              pattern="([0-9]+)"
+              min="7"
+              max="13"
+              type="text"
               [(ngModel)]="telefono">
               <br>
               <label for="mail">Correo</label>
@@ -41,12 +44,14 @@
               required
               name="mail" 
               type="email"
+              pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$"
               [(ngModel)]="mail">
               <br>
               <label for="direccion" >Direccion</label>
               <input id="direccion"
               required
-              name="direccion" 
+              name="direccion"
+              max="50" 
               type="text"
               [(ngModel)]="direccion">
               <br>

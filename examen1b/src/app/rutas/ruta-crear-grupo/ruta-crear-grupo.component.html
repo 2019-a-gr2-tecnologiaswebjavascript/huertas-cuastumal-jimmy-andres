@@ -23,7 +23,7 @@
     max="10"
     name="nombreUsuario" 
     type="text" 
-    pattern="([A-Z])\w+"
+    pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
     [(ngModel)]="nombre"
   
     >
@@ -40,7 +40,8 @@
     required
     type="number"
     name="numeroAutos"
-    [(ngModel)]="sad"
+    max="2"
+    [(ngModel)]="numAutos"
     >
     <label for="licenciaValida">Licencia Valida</label>
     <select name="licenciaValida"

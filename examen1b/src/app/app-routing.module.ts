@@ -7,6 +7,7 @@ import { RutaComprarComponent } from './rutas/ruta-comprar/ruta-comprar.componen
 import { RutaGruposProductosComponent } from './rutas/ruta-grupos-productos/ruta-grupos-productos.component';
 import { RutaCrearGrupoComponent } from './rutas/ruta-crear-grupo/ruta-crear-grupo.component';
 import { RutaCrearProductoComponent } from './rutas/ruta-crear-producto/ruta-crear-producto.component';
+import { EstaRegistradoService } from './servicios/guards/esta-registrado.service';
 
 const routes: Routes = [
   {
@@ -16,30 +17,48 @@ const routes: Routes = [
       {
         path:'revisarCompras',
         component: RutaRevisarComprasComponent,
+        canActivate:[
+          EstaRegistradoService
+        ],
       },
       {
         path:'grupos',
         component: RutaGruposComponent,
+        canActivate:[
+          EstaRegistradoService
+        ],
         children:[
           {
             path:'productos/:idGrupo',
             component:RutaGruposProductosComponent,
+            canActivate:[
+              EstaRegistradoService
+            ],
             children:[
               {
                 path : 'crear',
                 component: RutaCrearProductoComponent,
+                canActivate:[
+                  EstaRegistradoService
+                ],
               }
             ],
           },
           {
             path:'crearGrupo',
             component: RutaCrearGrupoComponent,
+            canActivate:[
+              EstaRegistradoService
+            ],
           }
         ]
       },
       {
         path:'comprar',
         component: RutaComprarComponent ,
+        canActivate:[
+          EstaRegistradoService
+        ],
       }
     ],
   },
