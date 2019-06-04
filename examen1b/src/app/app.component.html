@@ -12,10 +12,10 @@
       <input id="nombre" 
       required
       min="5"
-      max="10"
+      max="15"
       name="nombreUsuario" 
       type="text" 
-      pattern="([A-Z])\w+"
+      pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
       [(ngModel)]="nombre"
       #vtNombre="ngModel"
       >
@@ -32,7 +32,7 @@
     -->
       </div>
     </div>
-    <button type="submit" [disabled]="formularioNombre.invalid"> Tipo submit</button>
+    <button type="submit" [disabled]="formularioNombre.invalid"> Registrar</button>
   </form>
 </div>
   <router-outlet></router-outlet>

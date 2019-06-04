@@ -28,7 +28,7 @@ export class FacturaService {
 
     this._carritoService.carritoCompras=[];
     this.facturas.push(nuevaFactura);
-    console.log(nuevaFactura)
+    //console.log(nuevaFactura)
 
   }
 

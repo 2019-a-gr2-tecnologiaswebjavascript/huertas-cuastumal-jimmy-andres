@@ -14,15 +14,20 @@
               min="5"
               max="10"
               name="nombreUsuarioCompra" 
-              type="text"
+              type="text" 
+              pattern="^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$"
               [(ngModel)]="nombre">
               <br>
               <label for="cedula">Cedula</label>
               <input id="cedula" 
-              required
+              rrequired
+              minlength="10"
+              maxlength="10"
+              pattern="([0-9]{10})"
               name="cedula" 
-              type="number"
-              [(ngModel)]="cedula">
+              type="text" 
+              [(ngModel)]="cedula"
+              #vtCedula="ngModel">
               <br>
               <label for="telefono">Telefono</label>
               <input id="telefono" 
