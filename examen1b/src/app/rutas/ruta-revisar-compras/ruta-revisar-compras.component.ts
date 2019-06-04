@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FacturaService } from 'src/app/servicios/factura/factura.service';
 
 @Component({
   selector: 'app-ruta-revisar-compras',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaRevisarComprasComponent implements OnInit {
 
-  constructor() { }
+  facturas=[];
+
+  constructor(private readonly _facturaService:FacturaService) { }
 
   ngOnInit() {
+    this.facturas=this._facturaService.obtenerFacturas();
+  }
+
+  buscar(formulario){
+    this.facturas = this._facturaService.buscarFactura(formulario.controls.busqueda.value)
   }
 
 }

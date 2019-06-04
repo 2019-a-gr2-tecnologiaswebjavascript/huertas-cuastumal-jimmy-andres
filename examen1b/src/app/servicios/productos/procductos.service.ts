@@ -24,7 +24,7 @@ export class ProcductosService {
       color: "negro",
       modelo: "Accent",
       anio: "2017",
-      valor: 2000
+      valor: 1000
     },{
       idChofer: "3",
       chasis: "jytasd98r",
@@ -32,7 +32,7 @@ export class ProcductosService {
       color: "azul",
       modelo: "xtrail",
       anio: "2008",
-      valor: 3000
+      valor: 1000
     }
 
   ]

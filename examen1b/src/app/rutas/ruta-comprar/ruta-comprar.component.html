@@ -1,12 +1,12 @@
 <div class="container">
-  <div style="text-align: center;"><h1>COMPRAR</h1> <br></div>
+  <div style="text-align: center;"><h1>COMPRAR</h1> <br> </div>
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
         <div class="col-sm-4">
-            <form #formularioFactura="ngForm"
+            <form #formularioCabecera="ngForm"
               novalidate
-              (submit)="guardarFactura(formularioFactura)">
+              (submit)="guardarFactura(formularioCabecera)">
                 
               <label for="nombre">Nombre</label>
               <input id="nombre" 
@@ -20,7 +20,7 @@
               <label for="cedula">Cedula</label>
               <input id="cedula" 
               required
-              name="nombreUsuarioCompra" 
+              name="cedula" 
               type="number"
               [(ngModel)]="cedula">
               <br>
@@ -42,10 +42,11 @@
               <input id="direccion"
               required
               name="direccion" 
-              type="number"
+              type="text"
               [(ngModel)]="direccion">
               <br>
               <button type="submit"> Comprar </button>
+              <button (click)=salir()> Salir</button>
             </form>
         </div>
         <div class="col-sm-8" style="text-align: center">
@@ -54,7 +55,7 @@
               <tr>
                 <th>Producto</th>
                 <th>Cantidad</th>
-                <th> Accion</th>
+                <th> </th>
               </tr>
             </thead>
             <tbody *ngFor="let item of carrito">
@@ -65,8 +66,8 @@
                   <a 
                   class="quitar-link">
                    <button (click)="quitarDelCarrito(item)"
-                           class="btn btn-outline-danger btn-block espaciado-boton">
-                       Quitar
+                           class="btn btn-outline-danger espaciado-boton redondo">
+                       <h2>-</h2>
                    </button>
                </a>
                 </td>
@@ -81,14 +82,14 @@
     <div class="col-sm-4">
       <h3 >Productos</h3>
       <h5>Cajero: {{nombreCajero}}</h5>
-      <h5>Total : </h5>
+      <h5>Total : {{valor}}</h5>
         <table class="table table-hover animated slideInLeft">
             <thead>
             <tr>
                 <!-- th -> table header -->
                 <th width="20%">Marca</th>
                 <th width="20%">Modelo</th>
-                <th width="25%" style="text-align: center">Accion</th>
+                <th width="25%" style="text-align: center"></th>
     
             </tr>
             </thead>
@@ -97,12 +98,12 @@
                       <!-- td -> table detail -->
                       <td>{{producto.nombreMarca}}</td>
                       <td>{{producto.modelo}}</td>
-                      <td>
+                      <td style="text-align: center;">
                           <a 
-                             class="quitar-link">
+                             class="quitar-link" >
                               <button (click)="agregarAlCarrito(producto)"
-                                      class="btn btn-outline-danger btn-block espaciado-boton">
-                                  Agregar
+                                      class="btn btn-outline-success espaciado-boton redondo">
+                                  <h3>+</h3>
                               </button>
                           </a>
                           

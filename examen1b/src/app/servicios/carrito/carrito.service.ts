@@ -37,6 +37,7 @@ export class CarritoService {
       }
       console.log('Se anadio al carrito', itemCarrito);
       //console.log(this.carritoCompras)
+      //console.log( "valor", this.valorCarrito())
       return this.carritoCompras;
   }
 
@@ -78,8 +79,9 @@ export class CarritoService {
     }
     console.log('Se quito del carrito', itemCarrito);
     //console.log(this.carritoCompras)
+    //console.log("Valor",this.valorCarrito())
     return this.carritoCompras;
-}
+  }
  
   private quitarAlContador(indice:number){
     this.carritoCompras[indice].cantidad--;
@@ -89,6 +91,15 @@ export class CarritoService {
     this.carritoCompras.splice(indice,1);
   }
 
+  valorCarrito(){
+    let valor=0;
+    this.carritoCompras.forEach( (itemCarrito)=>{
+
+      valor=valor + (itemCarrito.cantidad)*(+itemCarrito.valor)
+      
+    } )
+    return valor;
+  }
 
 
   /*
