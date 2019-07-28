@@ -16,6 +16,7 @@
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
     "sails-mysql": "^1.0.1",
+    "skipper-disk": "^0.5.12",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
   },
