@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { EstaLogeadoService } from '../services/Guards/esta-logeado.service';
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+    canActivate:[EstaLogeadoService],
     children: [
       {
         path: 'tab1',

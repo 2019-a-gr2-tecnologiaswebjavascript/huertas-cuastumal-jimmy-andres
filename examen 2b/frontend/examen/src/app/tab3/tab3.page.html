@@ -1,9 +1,78 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+    <ion-title>Comprar</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content fullscreen>
+    
+    
+      
+    <form (ngSubmit)="guardarFactura()">
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Direccion</ion-label>
+          <ion-textarea [(ngModel)]="direccion" name="direccion"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label>Cedula</ion-label>
+            <ion-input type="number" [(ngModel)]="cedula" name="cedula"></ion-input>
+          </ion-item>
+        <ion-item>
+              <ion-label>Telefono</ion-label>
+              <ion-input type="number" [(ngModel)]="telefono" name="telefono"></ion-input>
+        </ion-item>
+        
+        <button class="btn btn-primary" type="submit" block>Generar Factura </button>
+    </form>
+    
+    <ion-row>
+      <ion-col size = 6>
+        <ion-list>
+          <ion-list-header>
+            Autos
+          </ion-list-header>
+          <ion-item *ngFor="let auto of autos">
+            <ion-label>{{auto.modelo}}</ion-label>
+            <ion-note slot="start" color="primary"> USD: {{auto.valor}}</ion-note>
+            <ion-button type="submit" (click)=agregarAlCarrito(auto)>Agregar</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size = 6>
+          <ion-list>
+            <ion-list-header>
+              Carrito de compra
+            </ion-list-header>
+            <ion-item *ngFor="let auto of carrito">
+              <ion-label>{{auto.modelo}}</ion-label>
+              <ion-label>{{auto.cantidad}}</ion-label>
+              <ion-button type="submit" (click)=quitarDelCarrito(auto)>Quitar</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+    </ion-row>
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Factura</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label> Cajero: Andres Huertas</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Valor: {{valor}}</ion-label>
+          </ion-item>
+        </ion-card-content> 
+      </ion-card>
+    
+</ion-content>

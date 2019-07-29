@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agregarCliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+      
+    <form (ngSubmit)="crear()">
+        <ion-item>
+          <ion-label>Chasis</ion-label>
+          <ion-input type="number" [(ngModel)]="chasis" name="chasis"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Valor</ion-label>
+            <ion-input type="number" [(ngModel)]="valor" name="valor"></ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label>Marca</ion-label>
+          <ion-textarea [(ngModel)]="marca" name="marca"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label>Color</ion-label>
+            <ion-textarea [(ngModel)]="color" name="color"></ion-textarea>
+          </ion-item>
+        <ion-item>
+              <ion-label>Modelo</ion-label>
+              <ion-textarea [(ngModel)]="modelo" name="modelo"></ion-textarea>
+          </ion-item>
+
+        <button class="btn btn-primary" type="submit" block>Agregar </button>
+      </form>
+
+    <br>
+        <ion-button type="submit"  (click)=volver()>Volver</ion-button>
+    
+</ion-content>

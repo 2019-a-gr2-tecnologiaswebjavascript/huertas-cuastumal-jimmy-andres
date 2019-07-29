@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FacturaService } from '../services/factura/factura.service';
+import { Factura } from '../dto/Factura';
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  facturaABuscar;
 
+  facturas:Factura[];
+  constructor(private readonly _facturaService: FacturaService) {}
+
+  ionViewWillEnter(){
+    this.facturas= this._facturaService.facturas
+    //this.nombreCajero = this._auth.currentUser.nombre
+  }
 }
